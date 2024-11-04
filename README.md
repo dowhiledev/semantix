@@ -100,10 +100,10 @@ pip install semantix[video]
 If you find Semantix helpful, give it a ⭐️ on [GitHub](https://github/chandralegend/semantix)!
 and If you have used Semantix in your project, add the badge to your README.md file.
 
-![https://github/chandralegend/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)
+![https://github.com/leafmonkeylabs/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)
 
 ```markdown
-[![https://github/chandralegend/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)](https://github/chandralegend/semantix)
+[![https://github.com/leafmonkeylabs/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)](https://github/chandralegend/semantix)
 ```
 
 If you used Semantix in your research, please cite it as follows:
