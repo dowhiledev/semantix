@@ -16,7 +16,7 @@ from semantix.inference import (
     PromptInfo,
 )
 from semantix.types import Image, Video
-from semantix.types.agentic import Agent
+from semantix.types.agents import Agent, Manager, Task
 from semantix.types.prompt import Information, OutputHint, Tool, TypeExplanation
 from semantix.types.semantic import Semantic
 from semantix.utils.utils import get_semstr
@@ -550,5 +550,16 @@ class BaseLLM:
             backstory = func.__doc__
             agent = Agent(self, role, goal, backstory, _tools)
             return agent
+
+        return decorator
+
+    def manager(self, tasks: List[Task], verbose: bool = False) -> Callable:
+        """Create a manager for a multi-agent system."""
+
+        def decorator(func: Callable) -> Manager:
+            goal = func.__doc__
+            annotations = func.__annotations__
+            manager = Manager(self, tasks, goal, annotations)
+            return manager
 
         return decorator

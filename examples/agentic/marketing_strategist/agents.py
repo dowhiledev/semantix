@@ -1,12 +1,11 @@
-from semantix import llms
-from semantix.tools import SerperDevTool, ScrapeWebsiteTool
+from semantix.llms.base import BaseLLM
 
-llm = llms.OpenAI()
+llm = BaseLLM()
 
 
 @llm.agent(
     "Conduct amazing analysis of the products and competitors, providing in-depth insights to guide marketing strategies.",
-    tools=[SerperDevTool(), ScrapeWebsiteTool()],
+    tools=[],
 )
 def lead_market_analyst() -> None:
     """As the Lead Market Analyst at a premier digital marketing firm, you specialize
@@ -16,7 +15,7 @@ def lead_market_analyst() -> None:
 
 @llm.agent(
     "Synthesize amazing insights from product analysis to formulate incredible marketing strategies.",
-    tools=[SerperDevTool(), ScrapeWebsiteTool()],
+    tools=[],
 )
 def chief_marketing_strategist() -> None:
     """You are the Chief Marketing Strategist at a leading digital marketing agency,
@@ -51,6 +50,8 @@ agents = [
     creative_content_creator,
     chief_creative_director,
 ]
+
+print(agents)
 
 __all__ = [
     "agents",

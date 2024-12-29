@@ -1,9 +1,10 @@
 """Types for the Agentic Loop."""
 
-from typing import Callable, List, Optional
+from typing import Callable, List, Optional, TYPE_CHECKING
 
-from semantix.llms import BaseLLM
-from semantix.types.prompt import Tool
+if TYPE_CHECKING:
+    from semantix.llms import BaseLLM
+    from semantix.types.prompt import Tool
 
 
 class Agent:
@@ -11,11 +12,11 @@ class Agent:
 
     def __init__(
         self,
-        llm: BaseLLM,
+        llm: "BaseLLM",
         role: str,
         goal: str,
         backstory: Optional[str],
-        tools: List[Tool],
+        tools: List["Tool"],
     ) -> None:
         """Initialize the agent."""
         self.llm = llm
@@ -68,9 +69,10 @@ class Manager:
     """Manager for the agents."""
 
     def __init__(
-        self, tasks: list[Task], goal: Optional[str], annotations: dict
+        self, llm: "BaseLLM", tasks: list[Task], goal: Optional[str], annotations: dict
     ) -> None:
         """Initialize the manager with the tasks, goal, and annotations."""
+        self.llm = llm
         self.tasks = tasks
         self.goal = goal
         self.inputs = annotations

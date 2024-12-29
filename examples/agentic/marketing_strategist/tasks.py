@@ -73,7 +73,7 @@ def copy_creation_task(
     ...
 
 
-tasks = [
+market_strategy_creation_tasks = [
     research_task,
     project_understanding_task,
     marketing_strategy_task,
@@ -81,4 +81,6 @@ tasks = [
     copy_creation_task,
 ]
 
-__all__ = ["tasks"]
+print(market_strategy_creation_tasks)
+
+__all__ = ["market_strategy_creation_tasks"]
