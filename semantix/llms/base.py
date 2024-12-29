@@ -16,6 +16,7 @@ from semantix.inference import (
     PromptInfo,
 )
 from semantix.types import Image, Video
+from semantix.types.agentic import Agent
 from semantix.types.prompt import Information, OutputHint, Tool, TypeExplanation
 from semantix.types.semantic import Semantic
 from semantix.utils.utils import get_semstr
@@ -537,5 +538,17 @@ class BaseLLM:
                 return inference_engine.run(frame, retries + 1, return_additional_info)
 
             return wrapper
+
+        return decorator
+
+    def agent(self, goal: str, tools: List[Union[Callable, Tool]] = []) -> Callable:
+        """Create an agent."""
+        _tools = [tool if isinstance(tool, Tool) else Tool(tool) for tool in tools]
+
+        def decorator(func: Callable) -> Agent:
+            role = func.__name__.replace("_", " ").title()
+            backstory = func.__doc__
+            agent = Agent(self, role, goal, backstory, _tools)
+            return agent
 
         return decorator

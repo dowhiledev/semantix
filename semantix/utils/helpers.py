@@ -2,7 +2,7 @@
 
 import dataclasses
 from enum import Enum
-from typing import Any, Dict, Tuple, Type
+from typing import Any, Dict, Tuple, Type, get_type_hints
 
 from pydantic import BaseModel, create_model
 
@@ -86,3 +86,24 @@ def create_enum(
     enum_obj = Enum(classname, fields)  # type: ignore
     enum_obj.__doc__ = desc
     return enum_obj
+
+
+def typed(cls: Any) -> Any:  # noqa: ANN401
+    """Decorator that converts a normal Python class or dataclass into a Pydantic model."""
+    hints = get_type_hints(cls)
+
+    field_definitions = {}
+    for name, hint in hints.items():
+        if name in cls.__dict__:
+            field_definitions[name] = (hint, cls.__dict__[name])
+        else:
+            field_definitions[name] = (hint, ...)
+
+    new_cls = create_model(f"{cls.__name__}", __base__=BaseModel, **field_definitions)
+    new_cls.__doc__ = cls.__doc__
+
+    for attr_name, attr_value in cls.__dict__.items():
+        if callable(attr_value):
+            setattr(new_cls, attr_name, attr_value)
+
+    return new_cls
