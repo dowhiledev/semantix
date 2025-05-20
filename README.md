@@ -1,3 +1,8 @@
+> **⚠️ This repository is no longer maintained/discontinued.**
+>
+> We are now working on a new programming language called [vibelang](https://github.com/dowhiledev/vibelang) that continues the ideas of Semantix in a more elegant, easy, and feature-rich way (still in development).  
+> **Check it out:** [https://github.com/dowhiledev/vibelang](https://github.com/dowhiledev/vibelang)
+
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/dark.png">
@@ -5,7 +10,7 @@
     <img alt="Semantix: Infusing Meaning into Code with Large Language Models" width="500px" src="https://i.ibb.co/SR2hqgh/1.png">
   </picture>
 
-  [![PyPI version](https://img.shields.io/pypi/v/semantix.svg)](https://pypi.org/project/semantix/) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/chandralegend/semantix/blob/main/try.ipynb) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+  [![PyPI version](https://img.shields.io/pypi/v/semantix.svg)](https://pypi.org/project/semantix/) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dowhiledev/semantix/blob/main/try.ipynb) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Semantix provides a simple but powerful way to infuse meaning into functions, variables and classes to leverage the power of Large Language models to generate structured typed outputs `without the need of JSON Schema or any other abstractions.`
 
@@ -75,10 +80,10 @@ pip install semantix
 To install the very latest from `main`:
 
 ```bash
-pip install git+https://github.com/chandralegend/semantix.git
+pip install git+https://github.com/dowhiledev/semantix.git
 ````
 
-Or open our intro notebook in Google Colab: [<img align="center" src="https://colab.research.google.com/assets/colab-badge.svg" />](https://colab.research.google.com/github/chandralegend/semantix/blob/main/try.ipynb)
+Or open our intro notebook in Google Colab: [<img align="center" src="https://colab.research.google.com/assets/colab-badge.svg" />](https://colab.research.google.com/github/dowhiledev/semantix/blob/main/try.ipynb)
 
 By default, Semantix doesn't install any llm packages. You can install them separately:
 
@@ -97,13 +102,13 @@ pip install semantix[video]
 
 ## Citation
 
-If you find Semantix helpful, give it a ⭐️ on [GitHub](https://github/chandralegend/semantix)!
+If you find Semantix helpful, give it a ⭐️ on [GitHub](https://github/dowhiledev/semantix)!
 and If you have used Semantix in your project, add the badge to your README.md file.
 
-![https://github.com/leafmonkeylabs/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)
+![https://github.com/dowhiledev/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)
 
 ```markdown
-[![https://github.com/leafmonkeylabs/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)](https://github/chandralegend/semantix)
+[![https://github.com/dowhiledev/semantix](https://img.shields.io/badge/Powered%20by-Semantix-8A2BE2)](https://github/dowhiledev/semantix)
 ```
 
 If you used Semantix in your research, please cite it as follows:
@@ -115,7 +120,7 @@ If you used Semantix in your research, please cite it as follows:
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub Repository},
-  howpublished = {\url{https://github/chandralegend/semantix}}
+  howpublished = {\url{https://github/dowhiledev/semantix}}
 }
 ```
 
